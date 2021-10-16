@@ -1,9 +1,10 @@
 const express = require('express')
 const cors = require('cors')
-require('dotenv').config()
+const dotenv = require('dotenv')
 const helmet = require('helmet')
 const { Sequelize } = require('sequelize')
 
+dotenv.config()
 const app = express() // crear una app express
 app.use(express.json()) // parser de requests body como json
 app.use(cors()) // habilita peticiones desde otro dominio
