@@ -1,0 +1,25 @@
+{
+  "name": "lab1-backend-model",
+  "version": "1.0.0",
+  "description": "",
+  "main": "backend.js",
+  "scripts": {
+    "start": "nodemon backend.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.eii.us.es/afdez/Lab1-Backend-Model.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "helmet": "^4.6.0",
+    "express": "^4.17.1",
+    "mariadb": "^2.5.4",
+    "sequelize": "^6.6.5",
+    "sequelize-cli": "^6.2.0"
+  }
+}
