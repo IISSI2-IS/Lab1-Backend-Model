@@ -39,6 +39,7 @@ sequelize.authenticate()
 // Routing and controllers will be explained on the following labs.
 const models = require('./models')
 const Restaurant = models.Restaurant
+const RestaurantCategory = models.RestaurantCategory
 
 const indexRestaurants = async function (req, res) {
   try {
