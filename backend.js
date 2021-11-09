@@ -30,13 +30,13 @@ sequelize.authenticate()
     return app.listen(port)
   })
   .then((server) => {
-    console.log('Deliverus listening at http://localhost:' + server.address().port)
+    console.info('Deliverus listening at http://localhost:' + server.address().port)
   })
   .catch(err => {
     console.error('ERROR - Unable to connect to the database:', err)
   })
 
-// The following belongs to controllers and routes folder. It is included here just for lab1 testig purposes
+// The following code belongs to controllers and routes folder. It is included here just for lab1 testig purposes
 // Routing and controllers will be explained on the following labs.
 const models = require('./models')
 const Restaurant = models.Restaurant
