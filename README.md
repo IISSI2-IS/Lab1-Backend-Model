@@ -122,7 +122,7 @@ And this is the Entity diagram proposed:
 ***
 
 
-[[https://raw.githubusercontent.com/wiki/IISSI2-IS/Lab1-Backend-Model/DeliverUS-EntityDiagram.drawio.png|height=700px]]
+[[https://raw.githubusercontent.com/wiki/IISSI2-IS/Lab1-Backend-Model/DeliverUS-EntityDiagram.drawio.png]]
 
 ***
 
