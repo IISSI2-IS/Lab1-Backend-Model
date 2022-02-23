@@ -132,7 +132,21 @@ For our purposes, the `up` method will include the creation of each table and it
 You will find migrations' files completed for all entities but Restaurant. 
 
 ### 4.1. Complete Create Restaurant migration
-Please complete the code of the file `migrations\create_restaurant.js` in order to include the Resturant entity properties (name them as it is shown in the Entity Diagram, specifically: name, description, address, postalCode, url, restaurantCategoryId, shippingCosts, email, logo, phone, createdAt, updatedAt, userId, status). Check Sequelize documentation for [Migrations Skeleton](https://sequelize.org/master/manual/migrations.html#migration-skeleton) and [DataTypes](https://sequelize.org/v5/manual/data-types.html)
+Please complete the code of the file `migrations\create_restaurant.js` in order to include the Resturant entity properties (name them as it is shown in the Entity Diagram, specifically: name, description, address, postalCode, url, restaurantCategoryId, shippingCosts, email, logo, phone, createdAt, updatedAt, userId, status). Check Sequelize documentation for [Migrations Skeleton](https://sequelize.org/master/manual/migrations.html#migration-skeleton) and [DataTypes](https://sequelize.org/v5/manual/data-types.html).
+
+Keep in mind that relationships are implemented by using foreign keys. Check Restaurant relationships and define foreign key properties and how are referencing related tables. For instance, a Restaurant is related to RestarantCategory, so you may have to define the following foreign key:
+```Javascript
+restaurantCategoryId: {
+  type: Sequelize.INTEGER,
+  references: {
+    model: {
+      tableName: 'RestaurantCategories'
+    },
+    key: 'id'
+  }
+}
+
+```
 
 Once you have completed the Restaurant table migration, you should run migrations. To this end, a Command Line Interface (CLI) binary is available (named `sequelize-cli`). It uses the database connection details found at `config\config.js`. 
 Next, you must run migrations by executing them using npx (tool for running npm packages binaries) on the terminal:
