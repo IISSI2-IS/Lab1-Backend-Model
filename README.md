@@ -1,8 +1,8 @@
 # Introduction
-We will learn how to run a basic _Node.js_ HTTP server and setup our project structure using the _Express_ framework. 
+We will learn how to run a basic _Node.js_ HTTP server and setup our project structure using the _Express_ framework.
 Secondly, we will understand how to create the Model of our project (from the MVC pattern) and learn how the _Sequelize_ package will help us creating the relational database schema and perform operations on the Maria Database.
 ## Prerequisites
-* Keep in mind we are developing the backend software needed for DeliverUS project. Please, read project requirements found at: https://github.eii.us.es/IISSI2-IS/DeliverUS-ProjectRequirements/wiki/DeliverUS---Project-Requirements
+* Keep in mind we are developing the backend software needed for DeliverUS project. Please, read project requirements found at: https://github.com/IISSI2-IS/DeliverUS-Backend/blob/main/README.md
 * Software requirements for the developing environment con be found at: https://github.eii.us.es/IISSI2-IS/IISSI2-IS-Backend/wiki
   * The template project includes EsLint configuration so it should auto-fix formatting problems as soon as a file is saved.
 
@@ -15,7 +15,7 @@ Press on "Use this template" to create your own repository based on this templat
 git clone <url>
 ```
 
-It may be necessary to setup your git username by running the following commands on your terminal: 
+It may be necessary to setup your git username by running the following commands on your terminal:
 ```PowerShell
 git config --global user.name "FIRST_NAME LAST_NAME"
 git config --global user.email "MY_NAME@example.com"
@@ -100,9 +100,9 @@ sequelize.authenticate()
   })
 ```
 
-* Run backend.js by opening a Terminal (Ctrl+Shift+\`) and executing `npm install` (if not previously executed) and `nodemon backend.js` and check terminal log. When using nodemon, each time you change and save some file of your project, it will stop and run it again, so it is very suitable for developing purposes. 
+* Run backend.js by opening a Terminal (Ctrl+Shift+\`) and executing `npm install` (if not previously executed) and `nodemon backend.js` and check terminal log. When using nodemon, each time you change and save some file of your project, it will stop and run it again, so it is very suitable for developing purposes.
 
-You should read something like: 
+You should read something like:
 ```PowerShell
 [nodemon] starting `node backend.js`
 Executing (default): SELECT 1+1 AS result
@@ -121,15 +121,15 @@ And this is the Entity diagram proposed:
 
 ***
 
-![alt text](https://raw.githubusercontent.com/wiki/IISSI2-IS/Lab1-Backend-Model/DeliverUS-EntityDiagram.drawio.png)
+![alt text](https://user-images.githubusercontent.com/19324988/155347424-c2c87a8e-00f4-400e-8024-eca40a776c6a.png)
 
 ***
 
-Migrations are a powerfull tool to keep your database schema and statuses tracked. During this subject, we will use them to create our database schema. Notice that you can find one migration for each entity: User, Restaurant, Product, Order (and ProductCategory + RestaurantCategory). 
-Each migration has two methods: `up` and `down`, that dictate how to perform the migration and undo it. 
+Migrations are a powerfull tool to keep your database schema and statuses tracked. During this subject, we will use them to create our database schema. Notice that you can find one migration for each entity: User, Restaurant, Product, Order (and ProductCategory + RestaurantCategory).
+Each migration has two methods: `up` and `down`, that dictate how to perform the migration and undo it.
 For our purposes, the `up` method will include the creation of each table and its fields, defining PrimaryKey and ForeignKeys.
 
-You will find migrations' files completed for all entities but Restaurant. 
+You will find migrations' files completed for all entities but Restaurant.
 
 ### 4.1. Complete Create Restaurant migration
 Please complete the code of the file `migrations\create_restaurant.js` in order to include the Resturant entity properties (name them as it is shown in the Entity Diagram, specifically: name, description, address, postalCode, url, restaurantCategoryId, shippingCosts, email, logo, phone, createdAt, updatedAt, userId, status). Check Sequelize documentation for [Migrations Skeleton](https://sequelize.org/master/manual/migrations.html#migration-skeleton) and [DataTypes](https://sequelize.org/v5/manual/data-types.html).
@@ -148,7 +148,7 @@ restaurantCategoryId: {
 
 ```
 
-Once you have completed the Restaurant table migration, you should run migrations. To this end, a Command Line Interface (CLI) binary is available (named `sequelize-cli`). It uses the database connection details found at `config\config.js`. 
+Once you have completed the Restaurant table migration, you should run migrations. To this end, a Command Line Interface (CLI) binary is available (named `sequelize-cli`). It uses the database connection details found at `config\config.js`.
 Next, you must run migrations by executing them using npx (tool for running npm packages binaries) on the terminal:
 ```PowerShell
 npx sequelize-cli db:migrate
@@ -180,7 +180,7 @@ Object Relational Mapping (ORM) is a software programming technique to bind busi
 
 Sequelize is a Node.js Object Relational Mapping tool that provides all the necessary tools for establishing connections to the database (as explained in [exercise 3.2](https://github.eii.us.es/IISSI2-IS/Lab1-Backend-Model/wiki#32-run-http-server-and-connect-to-database)), running migrations and seeders ([exercise 4](https://github.eii.us.es/IISSI2-IS/Lab1-Backend-Model/wiki#4-migrations) and [exercise 5](https://github.eii.us.es/IISSI2-IS/Lab1-Backend-Model/wiki#5-seeders)), defining models and perform operations.
 
-You can find Models definitions for all entities at `models` folder. Each model is a class named after its corresponding table (but in singular) and extends the Model class from Sequelize. 
+You can find Models definitions for all entities at `models` folder. Each model is a class named after its corresponding table (but in singular) and extends the Model class from Sequelize.
 
 ### 6.1. Complete Restaurant model
 Please complete the code of the file `models\restaurant.js` in order to include all the properties that match the corresponding fields of the Restaurants table.
@@ -238,7 +238,7 @@ const indexRestaurants = async function (req, res) {
 
 app.route('/restaurants').get(indexRestaurants)
 
-``` 
+```
 Notice that the `indexRestaurants` function performs a query to the model in order to retrieve all restaurants from the database, ordered by RestaurantCategory, and returns them as a JSON document. Next we define the endpoint `/restaurants` that answers to requests using the `indexRestaurants` function. We will learn more about routing and controllers next labs.
 
 Open ThunderClient extension (https://www.thunderclient.io/), and reload the collections by clicking on Collections → _**≡**_ menu→ reload. Collections are stored at `example_api_client

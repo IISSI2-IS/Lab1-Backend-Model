@@ -5,14 +5,28 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "pwa-node",
+            "type": "node",
+            "request": "attach",
+            "name": "Docker: Attach to Node",
+            "localRoot": "${workspaceFolder}",
+            "protocol": "inspector",
+            "port": 9229,
+            "address": "localhost",
+            "remoteRoot": "/src",
+            "restart": true
+        },
+        {
+            "name": "Debug via NPM",
             "request": "launch",
-            "name": "Launch Program",
-            "runtimeExecutable": "${workspaceFolder}/node_modules/nodemon/bin/nodemon.js",
+            "runtimeArgs": [
+                "run-script",
+                "start"
+            ],
+            "runtimeExecutable": "npm",
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/backend.js"
+            "type": "pwa-node"
         }
     ]
 }
