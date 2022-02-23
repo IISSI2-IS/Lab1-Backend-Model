@@ -241,7 +241,7 @@ app.route('/restaurants').get(indexRestaurants)
 ``` 
 Notice that the `indexRestaurants` function performs a query to the model in order to retrieve all restaurants from the database, ordered by RestaurantCategory, and returns them as a JSON document. Next we define the endpoint `/restaurants` that answers to requests using the `indexRestaurants` function. We will learn more about routing and controllers next labs.
 
-Open ThunderClient extension (https://www.thunderclient.io/), and reload the collections by clicking on Collections → _**≡**_ menu→ reload. Collections are stored at 
+Open ThunderClient extension (https://www.thunderclient.io/), and reload the collections by clicking on Collections → _**≡**_ menu→ reload. Collections are stored at `example_api_client
 
 Click on Restaurants folder and you will find a simple GET ALL request. Run the request, it should return a _200 OK HTTP Status Code_ and a JSON with the Restaurants information.
 
