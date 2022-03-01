@@ -121,7 +121,7 @@ And this is the Entity diagram proposed:
 
 ***
 
-![alt text](https://user-images.githubusercontent.com/19324988/155347424-c2c87a8e-00f4-400e-8024-eca40a776c6a.png)
+![alt text](https://user-images.githubusercontent.com/19324988/155700850-bb7817fb-8818-440b-97cb-4fbd33787f20.png)
 
 ***
 
